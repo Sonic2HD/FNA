@@ -167,6 +167,7 @@
 		<Compile Include="src\Graphics\Effect\EffectPassCollection.cs" />
 		<Compile Include="src\Graphics\Effect\EffectTechnique.cs" />
 		<Compile Include="src\Graphics\Effect\EffectTechniqueCollection.cs" />
+		<Compile Include="src\Graphics\Effect\IEffectBones.cs" />
 		<Compile Include="src\Graphics\Effect\IEffectFog.cs" />
 		<Compile Include="src\Graphics\Effect\IEffectLights.cs" />
 		<Compile Include="src\Graphics\Effect\IEffectMatrices.cs" />

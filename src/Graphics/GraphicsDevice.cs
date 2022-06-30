@@ -1099,6 +1099,27 @@ namespace Microsoft.Xna.Framework.Graphics
 
 		#region DrawPrimitives: VertexBuffer, IndexBuffer
 
+		public void DrawIndexedPrimitives(
+			PrimitiveType primitiveType,
+			int baseVertex,
+			int startIndex,
+			int primitiveCount
+		) {
+			int numVertices = byte.MaxValue; // hacky
+			switch (primitiveType) {
+				case PrimitiveType.LineList:
+					numVertices = primitiveCount * 2;
+					break;
+				case PrimitiveType.PointListEXT:
+					numVertices = primitiveCount;
+					break;
+				case PrimitiveType.TriangleList:
+					numVertices = primitiveCount * 3;
+					break;
+			}
+			DrawIndexedPrimitives(primitiveType, baseVertex, 0, numVertices, startIndex, primitiveCount);
+		}
+
 		/// <summary>
 		/// Draw geometry by indexing into the vertex buffer.
 		/// </summary>
